@@ -29,5 +29,5 @@ The framework uses the 'GLFW' library for setting up a window and 'glad' to init
 the file is under `$ProjectFolder\build\2_assignment`
 
 ## Contact
-Solution provider: [Guocheng Qian](gcqian.com)
+Solution provider: [Guocheng Qian](https://www.gcqian.com)
 
