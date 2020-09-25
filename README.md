@@ -1,8 +1,8 @@
-# CS380 - GPGPU Programming Framework
+# CS380 - GPGPU Programming - OpenGL exercise
 
 ## Introduction
 
-This is the framework for the 'CS380 - GPGPU Programming' lab. 
+This is the framework for the course project of 'CS380 - GPGPU Programming' at KAUST. 
 
 ## Compiling and Running the Framework (Ubuntu 18.04 Tested)
 The framework is tested on Ubuntu 18.04 machines with Nvidia graphic cards (CUDA 10.0).
@@ -18,18 +18,16 @@ The framework uses the 'GLFW' library for setting up a window and 'glad' to init
 
 2. Compile, Link
 
-```shell
- mkdir build & cd build  # or use: `cmake-gui`
- cmake ..
- make -j32
-```
+   ```shell
+   mkdir build & cd build  # or use: `cmake-gui`
+   cmake ..
+   make -j32
+   ```
 
 3. Run:
 `./2_assignment`
 the file is under `$ProjectFolder\build\2_assignment`
 
 ## Contact
-TA: Peter Rautek: peter.rautek@kaust.edu.sa
-
 Solution provider: guocheng.qian@kaust.edu.sa
 
