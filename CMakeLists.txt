@@ -14,11 +14,6 @@ if(UNIX)
     set(OpenGL_GL_PREFERENCE GLVND)
 endif()
 
-find_package( glm CONFIG REQUIRED )
-find_package( glfw3 CONFIG REQUIRED )
-find_package( OpenGL REQUIRED )
-
-
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT CS380)
 # C++ Compiler options
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
@@ -28,17 +23,25 @@ set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS})
 set(CUDA_HOST_COMPILER clang++)
 
 # Adding cuda libraries
-find_package(CUDA)
+find_package(CUDA 10.1)
 include_directories(${CUDA_INCLUDE_DIRS})
 SET(ALL_CUDA_LIBS ${CUDA_LIBRARIES} ${CUDA_cusparse_LIBRARY} ${CUDA_cublas_LIBRARY})
 SET(LIBS ${LIBS} ${ALL_CUDA_LIBS})
-message(STATUS "CUDA_LIBRARIES: ${CUDA_INCLUDE_DIRS} ${ALL_CUDA_LIBS}")
+message(STATUS "CUDA_LIBRARIES: ${CUDA_INCLUDE_DIRS} ${ALL_CUDA_LIBS}  cuda X11")
 set(CUDA_PROPAGATE_HOST_FLAGS ON)
 set(CUDA_SEPARABLE_COMPILATION OFF)
 
+find_package( glm CONFIG REQUIRED )
+find_package( glfw3 CONFIG REQUIRED )
+find_package( OpenGL REQUIRED )
+
 include_directories( common)
+include_directories( data)
+
 add_subdirectory( common )
 add_subdirectory( 1_assignment )
 add_subdirectory( 2_assignment )
+add_subdirectory( 3_assignment )
+add_subdirectory( 4_assignment )
 
 

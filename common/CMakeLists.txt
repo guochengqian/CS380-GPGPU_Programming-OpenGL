@@ -1,19 +1,33 @@
 set(target common)
 
 set(common_SOURCES
-        teapotpatch.cpp
-        teapot.cpp
-        torus.cpp
-        objmesh.cpp
-        cube.cpp
-        plane.cpp
-        teapotdata.h
+        camera.h
+        shader.cpp shader.h
+#        resource_manager.cpp
+#        texture.cpp
+
+        model/cube.cpp
+        model/sphere.cpp model/sphere.h
+        model/teapotpatch.cpp
+        model/teapot.cpp
+        model/torus.cpp
+        model/plane.cpp
+        model/teapotdata.h
+        model/objmesh.cpp
+        model/trianglemesh.cpp
+        model/skybox.cpp
+        model/vbomesh.cpp
+        model/vbocube.cpp
+        model/vbosphere.cpp
+
+        aabb.h
+        utils.h grid.cpp random.h
+        stbimpl.cpp
+
         glad/glad.c
-        trianglemesh.cpp trianglemesh.h aabb.h
-        texture.h texture.cpp
-        utils.h grid.cpp grid.h random.h
-        skybox.cpp skybox.h
-        stbimpl.cpp)
+
+        CImg/CImg.h
+        )
 
 add_library(${target} STATIC ${common_SOURCES})
 
@@ -25,3 +39,5 @@ if( UNIX AND NOT APPLE )
     target_link_libraries(${target} PUBLIC ${CMAKE_DL_LIBS})
 endif()
 
+#include_directories(  opencv-4.5.0 )
+#add_subdirectory( opencv-4.5.0 )
